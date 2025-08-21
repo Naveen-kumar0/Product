@@ -1,0 +1,80 @@
+<h2>Features Display</h2>
+
+<!-- Table to Display Features -->
+<oj-table id="featureTable" data="[[dataProvider]]" columns='[
+    {"headerText": "ID", "field": "id"},
+    {"headerText": "Product ID", "field": "productId"},
+    {"headerText": "Feature Name", "field": "featureName"},
+    {"headerText": "Is Enabled", "field": "isEnabled"},
+    {"headerText": "Fee Amount", "field": "feeAmount"},
+    {"headerText": "Fee Frequency", "field": "feeFreq"}
+  ]'>
+</oj-table>
+
+<br/><br/>
+
+<!-- Add Feature Button -->
+<oj-button on-oj-action="[[openAddDialog]]">
+  Add Feature
+</oj-button>
+
+<!-- Edit Feature Button -->
+<oj-button on-oj-action="[[openEditDialog]]">
+  Edit Feature
+</oj-button>
+
+<!-- Delete Feature Button -->
+<oj-button on-oj-action="[[openDeleteDialog]]">
+  Delete Feature
+</oj-button>
+
+<br/><br/>
+
+<!-- Add Feature Dialog -->
+<oj-dialog id="addFeatureDialog" dialog-title="Add Feature">
+  <div slot="body">
+    <oj-form-layout label-edge="inside">
+      <oj-input-text value="[[id]]" label-hint="Feature ID"></oj-input-text>
+      <oj-input-text value="[[productId]]" label-hint="Product ID"></oj-input-text>
+      <oj-input-text value="[[featureName]]" label-hint="Feature Name"></oj-input-text>
+      <oj-input-text value="[[isEnabled]]" label-hint="Is Enabled (Y/N)"></oj-input-text>
+      <oj-input-text value="[[feeAmount]]" label-hint="Fee Amount"></oj-input-text>
+      <oj-input-text value="[[feeFreq]]" label-hint="Fee Frequency"></oj-input-text>
+    </oj-form-layout>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[addFeature]]">Save</oj-button>
+    <oj-button on-oj-action="[[function(){ document.getElementById('addFeatureDialog').close(); }]]">Cancel</oj-button>
+  </div>
+</oj-dialog>
+
+<!-- Edit Feature Dialog -->
+<oj-dialog id="editFeatureDialog" dialog-title="Edit Feature">
+  <div slot="body">
+    <oj-form-layout label-edge="inside">
+      <oj-input-text value="[[id]]" label-hint="Feature ID"></oj-input-text>
+      <oj-input-text value="[[productId]]" label-hint="Product ID"></oj-input-text>
+      <oj-input-text value="[[featureName]]" label-hint="Feature Name"></oj-input-text>
+      <oj-input-text value="[[isEnabled]]" label-hint="Is Enabled (Y/N)"></oj-input-text>
+      <oj-input-text value="[[feeAmount]]" label-hint="Fee Amount"></oj-input-text>
+      <oj-input-text value="[[feeFreq]]" label-hint="Fee Frequency"></oj-input-text>
+    </oj-form-layout>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[editFeature]]">Update</oj-button>
+    <oj-button on-oj-action="[[function(){ document.getElementById('editFeatureDialog').close(); }]]">Cancel</oj-button>
+  </div>
+</oj-dialog>
+
+<!-- Delete Feature Dialog -->
+<oj-dialog id="deleteFeatureDialog" dialog-title="Delete Feature">
+  <div slot="body">
+    <oj-form-layout label-edge="inside">
+      <oj-input-text value="[[id]]" label-hint="Feature ID"></oj-input-text>
+    </oj-form-layout>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[deleteFeature]]">Delete</oj-button>
+    <oj-button on-oj-action="[[function(){ document.getElementById('deleteFeatureDialog').close(); }]]">Cancel</oj-button>
+  </div>
+</oj-dialog>
